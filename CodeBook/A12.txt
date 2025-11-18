@@ -1,0 +1,271 @@
+00:05:48 [Task2] read task description
+00:05:57 [Task2] compile
+00:07:16 [Task2] touch exp.py
+00:07:46 [Task2] read task description
+00:08:37 [Task2] inactive
+00:21:55 [Task2] active
+00:21:58 [Task2] edit exp.py
+import angr
+ proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_into=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+find = []
+avoid = []
+simgr.explore(find=find, avoid=avoid)
+s = simgr.found[0]
+print(s.posix.dumps[1])
+00:29:17 [Task2] open source code in ghidra
+00:31:03 [Task2] scroll through source code
+00:31:52 [Task2] focus on grub_mini_cmd_lsmod
+00:32:31 [Task2] try input DADADADADADADA
+00:32:51 [Task2] scroll through source code
+00:34:02 [Task2] try input DBDBDBDBDBDBDBDC
+00:34:14 [Task2] try input DBDBDBDBDDDCDD
+00:36:59 [Task2] fill survey
+00:40:54 [Task2] try input DADADADADADADADA
+00:41:03 [Task2] try input DADADADADADADBDBDCDCDD
+00:42:13 [Task2] inactive
+00:48:18 [Task2] active
+00:48:20 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+#find = []
+#avoid = []
+input_str = claripy.BVS("input", 8*100)
+state.solver.add(input_str !=0)
+simgr.explore(find=lambda s: b"null" in s.posix.dumps(1))
+s = simgr.found[0]
+poc = s.solver.eval(input_str, cast_to=bytes)
+00:51:01 [Task2] python exp.py
+00:51:51 [Task2] stop simulation
+00:51:52 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+avoid = [0x4015f3, 0x401894]
+input_str = claripy.BVS("input", 8*100)
+state.solver.add(input_str !=0)
+simgr.explore(find=lambda s: b"null" in s.posix.dumps(1))
+s = simgr.found[0]
+poc = s.solver.eval(input_str, cast_to=bytes)
+00:54:55 [Task2] python exp.py
+00:55:28 [Task2] try input DADADADADADBDBDCDCDD
+00:56:31 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+avoid = [0x4015f3, 0x401894]
+input_str = claripy.BVS("input", 8*100)
+state.solver.add(input_str !=0)
+simgr.explore(find=lambda s: b"null" in s.posix.dumps(1))
+s = simgr.found[0]
+poc = s.solver.eval(input_str, cast_to=bytes)
+print(poc)
+00:56:41 [Task2] stop simulation
+00:56:43 [Task2] python exp.py
+00:58:02 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+avoid = [0x40184c, 0x401894]
+input_str = claripy.BVS("input", 8*100)
+state.solver.add(input_str !=0)
+simgr.explore(find=lambda s: b"null" in s.posix.dumps(1))
+s = simgr.found[0]
+poc = s.solver.eval(input_str, cast_to=bytes)
+print(poc)
+00:58:07 [Task2] stop simulaion
+00:58:12 [Task2] python exp.py
+00:59:41 [Task2] read source code (focus on main)
+01:00:55 [Task2] look at disassembly code of main
+01:01:10 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+avoid = [0x401812, 0x401894]
+input_str = claripy.BVS("input", 8*100)
+state.solver.add(input_str !=0)
+simgr.explore(find=lambda s: b"null" in s.posix.dumps(1))
+s = simgr.found[0]
+poc = s.solver.eval(input_str, cast_to=bytes)
+print(poc)
+01:01:14 [Task2] stop simulation
+01:01:39 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+avoid = [0x401812, 0x401894]
+input_str = claripy.BVS("input", 8*100)
+state.posix.stdin.content = input_str
+#state.posix.stdin.size = 100
+simgr.explore(find=lambda s: b"null" in s.posix.dumps(1))
+s = simgr.found[0]
+poc = s.solver.eval(input_str, cast_to=bytes)
+print(poc)
+01:04:07 [Task2] python exp.py
+01:04:47 [Task2] read disassembly code of main
+01:05:07 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+find = [0x401732]
+avoid = [0x401812, 0x401894]
+# input_str = claripy.BVS("input", 8*100)
+# state.posix.stdin.content = input_str
+simgr.explore(find=lambda s: b"null" in s.posix.dumps(1))
+s = simgr.found[0]
+print(s.posix.dumps[0])
+01:07:43 [Task2] python exp.py **
+01:08:32 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+find = [0x401732]
+avoid = [0x401812, 0x401894]
+# input_str = claripy.BVS("input", 8*100)
+# state.posix.stdin.content = input_str
+simgr.explore(find=lambda s: b"null" in s.posix.dumps(1), avoid=avoid)
+s = simgr.found[0]
+print(s.posix.dumps[0])
+01:08:39 [Task2] python exp.py
+01:08:48 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+find = [0x401732]
+avoid = [0x401812, 0x401894]
+# input_str = claripy.BVS("input", 8*100)
+# state.posix.stdin.content = input_str
+# simgr.explore(find=lambda s: b"null" in s.posix.dumps(1), avoid=avoid)
+simgr.explore(find=find, avoid=avoid)
+s = simgr.found[0]
+print(s.posix.dumps[0])
+print(s.posix.dumps[1])
+01:09:22 [Task2] python exp.py
+01:09:43 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+find = [0x401732]
+avoid = [0x401812, 0x401894]
+# input_str = claripy.BVS("input", 8*100)
+# state.posix.stdin.content = input_str
+simgr.explore(find=lambda s: b"null" in s.posix.dumps(1), avoid=avoid)
+# simgr.explore(find=find, avoid=avoid)
+s = simgr.found[0]
+print(s.posix.dumps[0])
+print(s.posix.dumps[1])
+01:09:51 [Task2] python exp.py
+01:12:34 [Task2] stop simulation
+01:12:36 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+find = [0x401732]
+avoid = [0x401812, 0x401894]
+input_str = claripy.BVS("input", 8*100)
+state.posix.stdin.content = input_str
+simgr.explore(find=lambda s: b"null" in s.posix.dumps(1), avoid=avoid)
+# simgr.explore(find=find, avoid=avoid)
+s = simgr.found[0]
+print(s.posix.dumps[0])
+print(s.posix.dumps[1])
+01:12:42 [Task2] python exp.py
+01:12:53 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+find = [0x401732]
+avoid = [0x401812, 0x401894]
+# input_str = claripy.BVS("input", 8*100)
+# state.posix.stdin.content = input_str
+simgr.explore(find=lambda s: b"null" in s.posix.dumps(1), avoid=avoid)
+# simgr.explore(find=find, avoid=avoid)
+s = simgr.found[0]
+print(s.posix.dumps[0])
+print(s.posix.dumps[1])
+01:13:06 [Task2] python exp.py
+01:16:01 [Task2] read source code (focus on main)
+01:16:59 [Task2] stop simulation
+01:17:31 [Task2] read source code (focus on main)
+01:18:50 [Task2] python exp.py
+01:19:08 [Task2] stop simulation
+01:20:07 [Task2] ipython> %run exp.py
+01:20:31 [Task2] stop simulation
+01:20:33 [Task2] >simgr
+01:20:38 [Task2] >simgr.active
+01:21:33 [Task2] ipython> %run exp.py
+01:21:50 [Task2] scroll through disassembly code
+01:22:19 [Task2] stop simulation
+01:22:24 [Task2] >simgr
+01:23:36 [Task2] >for s in simgr.active:
+print(s.posix.dump[0])
+01:24:20 [Task2] >for s in simgr.active:
+print(s)
+01:24:29 [Task2] >for s in simgr.active:
+print(s.posix.dumps(0))
+01:25:35 [Task2] >for s in simgr.active:
+print(s.posix.dumps(1))
+01:25:58 [Task2] try input DBDBDC
+01:27:13 [Task2] >for s in simgr.active:
+print(s.posix.dumps(1).decode())
+01:28:19 [Task2] >for i in range(len(simgr.active)):
+print(i)
+s = simgr.active[1]
+print(s.posix.dumps(0).decode())
+01:30:07 [Task2] >for i in range(len(simgr.active)):
+if i ==42:
+    s = simgr.active[i]
+    print(s.posix.dumps(0).decode())
+    print(s.posix.dumps(1).decode())
+01:34:44 [Task2] >for i in range(len(simgr.active)):
+if i != -1:
+    s = simgr.active[i]
+    print("=============",i)
+    print(s.posix.dumps(0).decode())
+    print(s.posix.dumps(1).decode())
+01:36:28 [Task2] >for i in range(len(simgr.active)):
+s = simgr.active[i]
+out = s.posix.dumps(1).decode()
+if "-" in out:
+    print(i)
+    print(s.posix.dumps(0).decode())
+    print(s.posix.dumps(1).decode())
+01:37:56 [Task2] try input DBDBDBDBDBDBDBDB
+01:38:01 [Task2] try input DADADADADADDDDDD
+01:38:13 [Task2] try input DADADADADDDDDBDBDCDC
+01:39:19 [Task2] edit exp.py
+import angr, claripy
+proj = angr.Project("./main_angr", auto_load_libs=False, load_debug_info=True)
+state = proj.factory.entry_state()
+simgr = proj.factory.simgr(state)
+find = [0x401732]
+avoid = [0x401812, 0x401894]
+# input_str = claripy.BVS("input", 8*100)
+# state.posix.stdin.content = input_str
+simgr.explore(find=lambda s: b"-" in s.posix.dumps(1), avoid=avoid)
+# simgr.explore(find=find, avoid=avoid)
+s = simgr.found[0]
+print(s.posix.dumps[0])
+print(s.posix.dumps[1])
+01:39:29 [Task2] python exp.py
+01:41:09 [Task2] stop simulation
+01:41:13 [Task2] python exp.py
+01:48:47 [Task2] inactive
+02:03:52 [Task2] active
+02:04:20 [Task2] inactive
+02:15:43 [Task2] active
+02:15:46 [Task2] finish survey

@@ -1,0 +1,224 @@
+00:01:06 [Task3] read ppt
+01:42:53 [Task3] read task description
+01:43:32 [Task3] compile binary
+01:44:04 [Task3] read task description
+01:44:16 [Task3] load binary
+01:44:43 [Task3] read source code
+01:44:47 [Task3] read task description
+01:45:08 [Task3] set avoid 331
+01:45:13 [Task3] cancel avoid 331
+01:45:18 [Task3] set avoid 330
+01:45:52 [Task3] read source code
+01:46:55 [Task3] cancel avoid 330
+01:47:00 [Task3] set avoid 331
+01:47:22 [Task3] run SE
+01:47:31 [Task3] set Entry State
+01:47:36 [Task3] read source code
+01:47:42 [Task3] step in simulation
+01:47:47 [Task3] disassemble main
+01:48:00 [Task3] step in simulation*8
+01:48:08 [Task3] continue simulation
+01:48:18 [Task3] pause simulation
+01:48:28 [Task3] start new simulation
+01:48:29 [Task3] set Entry State
+01:48:50 [Task3] start new simulation
+01:48:51 [Task3] set Full-init State
+01:49:08 [Task3] start new simulation
+01:49:11 [Task3] set Call State
+01:49:17 [Task3] restart angr
+01:49:35 [Task3] load binary
+01:49:55 [Task3] scroll through source code
+01:50:23 [Task3] set avoid 331
+01:50:32 [Task3] set avoid 322
+01:50:38 [Task3] set Entry State
+01:50:41 [Task3] run simulation
+01:51:15 [Task3] look at stdin of first stat in deadended
+01:51:24 [Task3] look at stdin of each state in avoid
+01:51:35 [Task3] look at stderr of the sixth state in avoid
+01:51:34 [Task3]  look at stdout of the sixth state in avoid
+01:51:41 [Task3] look at stdin of the forth to sixth state in avoid
+01:51:43 [Task3] look at stdout of the forth state in avoid
+01:51:43 [Task3] look at stdin of the first state in avoid 
+01:51:44 [Task3]  look at stdout of the fifth state in avoid
+01:52:02 [Task3] cancel avoid 331
+01:52:15 [Task3] set avoid 227
+01:52:35 [Task3] scroll through source code
+01:52:46 [Task3] start new simulation
+01:52:49 [Task3] set Entry State
+01:52:52 [Task3] run simulation
+01:53:19 [Task3] look at stdin of each state in avoid
+01:53:32 [Task3] scroll through source code
+01:53:52 [Task3] look at stdout of each state in avoid
+01:53:58 [Task3] pause simulation
+01:54:04 [Task3] look at stdout of the second state in deadended
+01:54:08 [Task3] look at stdout of the third state in deadended
+01:54:13 [Task3] look at stdin of the forth state in deadended
+01:54:25 [Task3] scroll through source code
+01:54:39 [Task3] look at stdin, stdout, and stderr of the forth state in deadended
+01:54:50 [Task3] try input DDD
+01:55:00 [Task3] try input DDD
+01:55:11 [Task3] look at stdin of each states in deadended
+01:55:23 [Task3] try input D | DD
+01:55:46 [Task3] install strace
+01:56:55 [Task3] strace with input D | DD
+01:56:13 [Task3] scroll through source code
+01:56:23 [Task3] set avoid 330
+01:56:26 [Task3] start new simulation
+01:56:28 [Task3] set Entry State
+01:56:32 [Task3] run simulation
+01:57:00 [Task3] pause simulation
+01:57:02 [Task3] look at stdin of each state in avoid
+01:57:06 [Task3] continue simulation
+01:57:41 [Task3] pause simulation
+01:57:46 [Task3] look at stdout of the sixth state in avoid
+01:57:50 [Task3] look at stdin value of state in active
+01:57:55 [Task3] look at stdout of state in active
+01:58:01 [Task3] look at stdin of states in deadended
+01:58:07 [Task3] look at stdout of state in deadended
+01:58:13 [Task3] look at stderr of states in deadended
+01:58:26 [Task3] cancel avoid 322
+01:58:34 [Task3]  run new simulation
+01:58:35 [Task3] set Entry State
+01:58:40 [Task3] start simulation
+01:59:20 [Task3] look at stdin of each states in avoid
+01:59:40 [Task3] pause simulation
+01:59:42 [Task3] look at stdin of states in avoid
+01:59:56 [Task3] read source code in terminal
+02:02:01 [Task3] scroll through source code in angr
+02:02:23 [Task3] set avoid 119
+02:02:36 [Task3] set avoid 222
+02:02:42 [Task3] start new simulation
+02:02:48 [Task3] set Entry State
+02:02:52 [Task3] run simulation
+02:03:52 [Task3] pause simulation
+02:03:56 [Task3] look at stdin of states in avoid
+02:04:02 [Task3] look at stdin of state in active
+02:04:06 [Task3] continue simulation
+02:04:15 [Task3] read source code in terminal
+02:04:22 [Task3] try input D | D A
+02:04:33 [Task3] try input I | C
+02:04:56 [Task3] load binary
+02:05:16 [Task3] scroll through source code
+02:05:47 [Task3] try input D | D | D | DD
+02:06:26 [Task3] try input DD | DB | DA | DA | DA | IA
+02:08:04 [Task3] scroll through source code
+02:08:11 [Task3] read task description
+02:08:16 [Task3] scroll through source code
+02:08:48 [Task3] read task description
+02:08:55 [Task3] fill survey
+02:09:05 [Task3] try input DA | DA 
+02:09:27 [Task3] try input DD | DD | DD | DD | DD | DD
+02:09:46 [Task3] try input DA | DA | DA | DA | DA | DA
+02:09:52 [Task3] try input DC | DA | DA | DA | DA | DA
+02:10:10 [Task3] try input DC | DC | DA | DA | DA | DA
+02:10:19 [Task3] try input DC | DC | DA
+02:10:20 [Task3] try input DC | DC | DC
+02:10:29 [Task3] try input DC | DC | DB | DB | DA | DD
+02:11:00 [Task3] try input DD
+02:11:04 [Task3] try input DC
+02:11:14 [Task3] try input DD | DA | DA | DA | DA
+02:11:35 [Task3] try input DC
+02:11:41 [Task3] try input DC | DD | DB | DA | IA | A
+02:12:10 [Task3] try input IZA A | A
+02:12:43 [Task3] scroll through terminal log
+02:13:15 [Task3] try input DD | DC | DA | DA
+02:13:30 [Task3] fill survey
+02:14:04 [Task3] scroll through source code
+02:14:18 [Task3] set avoid 331
+02:14:29 [Task3] set avoid 334
+02:14:34 [Task3] set avoid 327
+02:14:38 [Task3] start new simulation
+02:14:41 [Task3] set Entry State
+02:14:45 [Task3] run simulation
+02:15:20 [Task3] pause simulation
+02:15:28 [Task3] look at stdout of state in avoid
+02:15:30 [Task3] look at stdin of states in avoid
+02:15:40 [Task3] scroll through source code
+02:15:48 [Task3] set avoid 256
+02:15:52 [Task3] set avoid 246
+02:15:56 [Task3] start new simulation
+02:15:59 [Task3] set Entry State
+02:16:02 [Task3] run simulation
+02:16:28 [Task3] pause simulation
+02:16:30 [Task3] look at stdin of each state in avoid
+02:16:34 [Task3] look at stdin of state in active
+02:16:38 [Task3] look at stdin of each state in avoid
+02:16:45 [Task3] scroll through source code
+02:16:49 [Task3] cancel avoid 331
+02:17:09 [Task3] scroll through source code
+02:18:31 [Task3] try input DC | DC | DA | DA
+02:19:11 [Task3] try input DC | DC | DA | DA
+02:19:30 [Task3] try input DC | DC | DA | DA
+02:19:58 [Task3] try input DC
+02:20:05 [Task3] try input DC | DC
+02:20:25 [Task3] mkfifo test
+02:21:00 [Task3] tail -f ./test | ./main_sedbg
+02:21:25 [Task3] open another terminal
+02:21:40 [Task3] echo -ne "DD\0" > test
+02:21:44 [Task3]  tail -f ./test | ./main_sedbg
+02:21:50 [Task3] echo -e "DD\0" > test
+02:22:12 [Task3] tail -f ./test | ./main_sedbg
+02:22:14 [Task3] echo -e "DC\0" > test
+02:23:34 [Task3] vim run.sh
+mkfifo test
+exec 3>test
+./main_sedbg < test
+echo -ne "DD\0" > test
+echo -ne "DC\0" > test
+exec 3>&test-
+02:25:03 [Task3] chmod +x run.sh
+02:25:07 [Task3] ./run.sh
+02:25:09 [Task3] rm test
+02:25:12 [Task3] ./run.sh
+02:25:17 [Task3] vim run.sh
+mkfifo test
+exec 3>test
+./main_sedbg < test
+test tail -n -f | test
+echo -ne "DD\0" > test
+echo -ne "DC\0" > test
+exec 3>&test-
+02:25:43 [Task3] ./run.sh
+02:25:45 [Task3] rm test
+02:25:51 [Task3] vim run.sh
+mkfifo test
+exec 3>test
+./main_sedbg < test
+< test tail -n +1 -f | test
+echo -ne "DD\0" > test
+echo -ne "DC\0" > test
+exec 3>&test-
+02:26:09 [Task3] rm test
+02:26:11 [Task3] ./run.sh
+02:26:14 [Task3] rm test
+02:26:16 [Task3] vim run.sh
+02:26:22 [Task3] ./main_sedbg
+02:26:38 [Task3] scroll through source code
+02:27:17 [Task3] scroll through source code in terminal
+02:27:24 [Task3] cp main.c main.c.old
+02:27:28 [Task3] vim main.c
+02:27:48 [Task3] comment out the while loop in main
+02:28:06 [Task3] overwrite line 5 to grub_mini_cmd_rmmod("D");
+02:28:12 [Task3] add line 6,7,8:
+grub_mini_cmd_rmmod("C");
+grub_mini_cmd_rmmod("A");
+grub_mini_cmd_rmmod("A");
+02:28:17 [Task3] compile
+02:28:18 [Task3] ./main_sedbg
+02:28:20 [Task3] edit main.c
+02:28:41 [Task3] compile
+02:28:43 [Task3] ./main_sedbg
+02:28:48 [Task3] vim main.c
+02:28:54 [Task3] add a line: grub_mini_cmd_insmod("D","B\0C\0D\0");
+02:29:03 [Task3] compile
+02:29:05 [Task3] ./main_sedbg
+02:29:12 [Task3] vim main.c
+02:29:14 [Task3] modify the same line:
+grub_mini_cmd_insmod("J","B\0C\0D\0");
+02:29:17 [Task3] compile
+02:29:19 [Task3] ./main_sedbg
+02:29:24 [Task3] vim main.c
+02:29:26 [Task3] add a line:
+grub_mini_cmd_lsmod();
+02:29:30 [Task3] compile
+02:29:32 [Task3] ./main_sedbg

@@ -1,0 +1,36 @@
+00:06:44 [Task2] read task description
+00:07:56 [Task2] compile
+00:08:07 [Task2] try input aaa
+00:08:21 [Task2] read source code
+00:10:18 [Task2] try input D | I | AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+00:10:43 [Task2] try input I | Z
+00:11:08 [Task2] run program
+00:12:17 [Task2] copy source code
+00:12:22 [Task2] leave vm
+00:18:51 [Task2] back to vm
+00:19:31 [Task2] load binary
+00:21:06 [Task2] scroll through disassembly code
+00:22:44 [Task2] scroll through source code
+00:23:13 [Task2] add avoid 222
+00:23:22 [Task2] add avoid 227
+00:23:34 [Task2] add avoid 246
+00:23:44 [Task2] add avoid 257
+00:24:23 [Task2] add avoid 330
+00:25:20 [Task2] add avoid 125
+00:25:27 [Task2] add avoid 134
+00:26:45 [Task2] search for start button of SE
+00:31:19 [Task2] scroll through source code
+00:33:54 [Task2] scroll through function list
+00:34:12 [Task2] scroll through source code
+00:35:11 [Task2] add find 204
+00:36:50 [Task2] read tutorial of SeDBG
+00:37:46 [Task2] search for start button of SE
+00:43:12 [Task2] read tutorial of SeDBG
+00:43:33 [Task2] inactive
+01:03:47 [Task2] active
+01:03:58 [Task2] inactive
+01:07:44 [Task2] active
+01:08:07 [Task2] fill survey
+01:10:56 [Task2] leave vm
+01:58:54 [Task2] back to vm
+01:59:50 [Task2] finish survey

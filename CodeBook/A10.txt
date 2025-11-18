@@ -1,0 +1,185 @@
+00:03:00 [Task 2] read task description
+00:04:12 [Task 2] read source code
+00:09:16 [Task 2] compile
+00:11:18 [Task 2] load binary in ghidra
+00:12:26 [Task 2] read source code (focus on main)
+00:13:43 [Task 2] read angr tutorial
+00:14:27 [Task 2] vim exp.py
+import angr
+proj = angr.Project('main_angr', auto_load_libs=False, load debug_into=True)
+state = proj.factory,entry_state()
+simgr = proj.factory.simgr(state)
+simgr.explore(avoid=[0x101894])
+for s in simgr.found:
+    print(s.posix.dumps(1))
+00:18:45 [Task 2] python ./exp.py
+00:21:25 [Task 2] read sim_manager.py (focus on explore)
+00:23:48 [Task 2] search for hook in sim_manager.py
+00:24:32 [Task 2] read source code
+00:26:03 [Task 2] edit exp.py
+import angr
+proj = angr.Project('main_angr', auto_load_libs=False, load debug_into=True)
+state = proj.factory,entry_state(stdin=angr.SimFile)
+simgr = proj.factory.simgr(state)
+while True:
+    succ = simgr.step()
+    print(succ.stashes['active'])
+00:28:59 [Task 2] python ./exp.py
+00:29:05 [Task 2] stop simulation
+00:29:16 [Task 2] scroll through simulation result
+00:29:56 [Task 2] scroll through source code
+00:30:58 [Task 2] edit exp.py
+import angr
+proj = angr.Project('main_angr', auto_load_libs=False, load debug_into=True)
+state = proj.factory,entry_state(stdin=angr.SimFile)
+simgr = proj.factory.simgr(state)
+while True:
+    succ = simgr.step()
+    for state in succ.stashes['active']:
+        print(state)
+00:31:35 [Task 2] python ./exp.py
+00:31:46 [Task 2] stop simulation
+00:33:39 [Task 2] scroll through source code
+00:33:58 [Task 2] read angr tutorial
+00:35:47 [Task 2] edit exp.py
+import angr
+proj = angr.Project('main_angr', auto_load_libs=False, load debug_into=True)
+state = proj.factory,entry_state(stdin=angr.SimFile)
+simgr = proj.factory.simgr(state)
+class Malloc(SimProcedure):
+    def run(self, argc, arfv):
+        print(argv[1])
+        return
+while True:
+    succ = simgr.step()
+    for state in succ.stashes['active']:
+        print(state)
+00:37:55 [Task 2] read source code
+00:40:17 [Task 2] edit exp.py
+import angr
+proj = angr.Project('main_angr', auto_load_libs=False, load debug_into=True)
+state = proj.factory,entry_state(stdin=angr.SimFile)
+simgr = proj.factory.simgr(state)
+class Malloc(SimProcedure):
+    def run(self, argc, arfv):
+        print(argv[1])
+        return
+proj.hook_symbol('malloc', Malloc())
+while True:
+    succ = simgr.step()
+    for state in succ.stashes['active']:
+        print(state)
+00:40:27 [Task 2] python ./exp.py
+00:40:33 [Task 2] edit exp.py
+import angr
+proj = angr.Project('main_angr', auto_load_libs=False, load debug_into=True)
+state = proj.factory,entry_state(stdin=angr.SimFile)
+simgr = proj.factory.simgr(state)
+class Malloc(angr.SimProcedure):
+    def run(self, argc, arfv):
+        print(argv[1])
+        return
+proj.hook_symbol('malloc', Malloc())
+while True:
+    succ = simgr.step()
+    for state in succ.stashes['active']:
+        print(state)
+00:40:38 [Task 2] python ./exp.py
+00:40:46 [Task 2] stop simulation
+00:40:55 [Task 2] scroll through simulation result
+00:41:08 [Task 2] edit exp.py
+import angr
+proj = angr.Project('main_angr', auto_load_libs=False, load debug_into=True)
+state = proj.factory,entry_state(stdin=angr.SimFile)
+simgr = proj.factory.simgr(state)
+class Malloc(angr.SimProcedure):
+    def run(self, argc, arfv):
+        print(argv[1])
+        return
+proj.hook_symbol('malloc', Malloc())
+while True:
+    succ = simgr.step()
+    for state in succ.stashes['active']:
+        print(state.regs.rip)
+00:41:19 [Task 2] python ./exp.py
+00:41:25 [Task 2] stop simulation
+00:41:27 [Task 2] edit exp.py
+import angr
+proj = angr.Project('main_angr', auto_load_libs=False, load debug_into=True)
+state = proj.factory,entry_state(stdin=angr.SimFile)
+simgr = proj.factory.simgr(state)
+class Malloc(angr.SimProcedure):
+    def run(self, argc, arfv):
+        print(argc, argv[1])
+        return
+proj.hook_symbol('malloc', Malloc())
+while True:
+    succ = simgr.step()
+    for state in succ.stashes['active']:
+        print(state)
+00:41:34 [Task 2] python ./exp.py
+00:41:53 [Task 2] stop simulation
+00:41:54 [Task 2] scroll through simulation result
+00:42:30 [Task 2] edit exp.py
+import angr
+proj = angr.Project('main_angr', auto_load_libs=False, load debug_into=True)
+state = proj.factory,entry_state(stdin=angr.SimFile)
+simgr = proj.factory.simgr(state)
+last_malloc=0x10000000
+history = {}
+class Malloc(angr.SimProcedure):
+    def run(self, size):
+        last_malloc += 0x10000
+        history[last_malloc]=size
+        return last_malloc
+class Free(angr.SimProcedure):
+    def run(self, addr):
+        if addr in history:
+            return
+        else:
+            return self.exit(1)
+@proj.hool(0, length=8)
+def hook_nullptr(state):
+    print(state.poxis.dumps(0))
+proj.hook_symbol('malloc', Malloc())
+proj.hook_symbol('free', Free())
+simgr.explore(avoid=[0x101894],)
+00:55:28 [Task 2] read angr tutorial
+00:55:41 [Task 2] python ./exp.py
+00:55:49 [Task 2] read angr tutorial
+00:56:03 [Task 2] edit exp.py
+import angr
+proj = angr.Project('main_angr', auto_load_libs=False, load debug_into=True)
+state = proj.factory,entry_state(stdin=angr.SimFile)
+simgr = proj.factory.simgr(state)
+last_malloc=0x10000000
+history = {}
+class Malloc(angr.SimProcedure):
+    def run(self, size):
+        global last_malloc
+        last_malloc += 0x10000
+        history[last_malloc]=size
+        return last_malloc
+class Free(angr.SimProcedure):
+    def run(self, addr):
+        if addr in history:
+            return
+        else:
+            return self.exit(1)
+@proj.hool(0, length=8)
+def hook_nullptr(state):
+    print(state.poxis.dumps(0))
+proj.hook_symbol('malloc', Malloc())
+proj.hook_symbol('free', Free())
+simgr.explore(avoid=[0x101894],)
+00:56:11 [Task 2] python ./exp.py
+00:56:32 [Task 2] scroll through source code
+01:01:18 [Task 2] read task description
+01:02:20 [Task 2] scroll through source code
+01:02:45 [Task 2] focus on grub_mini_cmd_rmmod
+01:03:31 [Task 2] focus on grub_dl_unref
+01:05:29 [Task 2] focus on main
+01:06:13 [Task 2] try input DC
+01:09:12 [Task 2] try input DCDC
+01:09:45 [Task 2] try input DCDCDD
+01:10:11 [Task 2] finish survey

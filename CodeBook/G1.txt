@@ -1,0 +1,101 @@
+00:00:51 [Task3] read ppt
+00:03:33 [Task3] open sedbg
+00:03:43 [Task3] load c source file
+00:04:43 [Task3] read ppt
+00:05:17 [PT1] cd && gcc [no -g flag]
+00:05:36 [PT1]  load ELF
+00:06:08 [PT1] read src in pseudocode 
+00:06:46 [PT1] try to set avoid / find but in pseudocode 
+00:07:16 [PT1] read ppt
+00:07:57 [PT1] try to load source code in to sedbg
+00:08:32 [PT1] read ppt
+00:09:10 [PT1] search in pseudocode box
+00:09:47 [PT1] try to load src
+00:10:35 [PT1]  restart sedbg
+00:10:51 [PT1] read ppt
+00:12:58 [Task3] Read Task Description  
+00:15:38 [Task3] cd && gcc
+00:16:18 [Task3] Load ELF
+00:16:29 [Task3] read source code [overall]
+00:18:04 [Task3] RSC [insmod]
+00:18:22 [Task3] RSC [main]
+00:18:45 [Task3] RSC [lsmod]
+00:19:40 [Task3] RSC [rmmod]
+00:19:49 [Task3] RSC [xstrdup]
+00:20:46 [Task3] RSC [grub_dl_ref]
+00:21:20 [Task3] RSC [ dl_resolve_dep]
+00:21:42 [Task3] RSC [dl_remove]
+00:22:29 [Task3] RSC [dl_unload]
+00:23:16 [Task3] Add find 324 add avoid 327
+00:25:42 [Task3] RSC
+00:25:52 [Task3]  add avoid 119
+00:26:41 [Task3] remove avoid 327
+00:27:31 [Task3] RSC [dl_unload]
+00:29:09 [Task3] read ppt
+00:29:37 [Task3] create new state
+00:30:13 [Task3] run explorer
+00:30:45 [Task3] SE stop, one state found
+00:31:14 [Task3] stdout of found state
+00:31:28 [Task3] remove find 324
+00:34:11 [Task3] add find 224
+00:34:33 [Task3] check stdout /sdtin for found states
+00:34:49 [Task3] click explore and found one more states
+00:35:18 [Task3]  read ppt
+00:35:32 [Task3] delete last found state
+00:35:44 [Task3] delete find 224 
+00:36:09 [Task3] add avoid 256
+00:38:45 [Task3] read ppt
+00:40:02 [Task3] set avoid 222
+00:40:11 [Task3] set avoid 227
+00:40:49 [Task3] set avoid 125
+00:43:00 [Task3] set avoid 246
+00:45:51 [Task3] add find 186
+00:46:04 [Task3] delete one found state
+00:46:29 [Task3] start new SE run [no active states]
+00:47:02 [Task3] add avoid 330
+00:47:11 [Task3] select one found [stdin = "DD"]
+00:48:01 [Task3] click explore
+00:49:23 [Task3] add avoid 173
+00:50:20 [Task3] add found 180
+00:50:59 [Task3] check states stdin for active / found /deadended
+00:51:39 [Task3] read ppt [solve strategy]
+00:54:13 [Task3] restart sedbg && reload elf
+00:54:27 [Task3] create new state
+00:54:45 [Task3] reload elf
+00:54:56 [Task3] create new state
+00:55:20 [Task3] add find 324
+00:55:25 [Task3] add find 328
+00:55:34 [Task3] add avoid 330
+00:55:45 [Task3] remove avoid 330
+00:56:01 [Task3] run
+00:56:28 [Task3] add find 180
+00:56:41 [Task3] dump stdin for found ["D\x00"]
+00:56:45 [Task3] delete found states
+00:56:48 [Task3] SE cont
+00:56:54 [Task3] dump stdin for found ["I\x00..."]
+00:57:23 [Task3] remove found 324, 328
+00:57:42 [Task3] delete found state [no active states now]
+00:58:09 [Task3] new entry state && run
+00:58:58 [Task3] find a state stdout ["DD"]
+00:59:09 [Task3] move found state back to active
+00:59:43 [Task3] restart sedbg
+01:00:02 [Task3] load ELF
+01:00:23 [Task3] add find 322, 323, 324
+01:00:35 [Task3] create entry state
+01:00:51 [Task3] add avoid 327, 330
+01:00:56 [Task3]  run
+01:01:24 [Task3] stopped 1 state found
+01:02:19 [Task3] remove all states in active and insert the found state into active
+01:02:34 [Task3] run, found one state
+01:03:35 [Task3] remove find 322,323
+01:03:42 [Task3] copy state back
+01:04:11 [Task3] hit steps actives
+01:04:52 [Task3] hit explore found 2 states
+01:05:07 [Task3] check stdout
+01:05:21 [Task3] read task description 
+01:06:18 [Task3] run ELF 
+01:06:21 [Task3] <IEE
+01:07:46 [Task3] use sedbg's console
+01:09:51 [Task3] remove all found states
+01:12:19 [Task3] use sedbg's console to set registers and etc.
+01:27:22 [Task3] filling survey 

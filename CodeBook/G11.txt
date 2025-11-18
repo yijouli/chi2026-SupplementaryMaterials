@@ -1,0 +1,206 @@
+00:49:56 [Task2] read task description
+00:51:34 [Task2] compile
+00:52:33 [Task2] load binary
+00:52:53 [Task2] read source code
+00:55:57 [Task2] add avoid 330
+00:56:50 [Task2] scroll through source code
+00:59:45 [Task2] add avoid 327
+00:59:55 [Task2] run simulation
+00:59:59 [Task2] add Entry State
+01:00:06 [Task2] start simulation
+01:01:28 [Task2] sudo apt upgrade
+01:02:17 [Task2] read tutorial of SeDBG
+01:04:30 [Task2] scroll through source code
+01:05:04 [Task2] add avoid 119
+01:05:11 [Task2] add avoid 125
+01:05:37 [Task2] add avoid 173
+01:05:52 [Task2] add avoid 222
+01:05:59 [Task2] add avoid 246
+01:06:04 [Task2] add avoid 257
+01:06:23 [Task2] add avoid 331
+01:06:27 [Task2] cancel avoid 327
+01:06:33 [Task2] run simulation
+01:06:35 [Task2] set Entry State
+01:06:40 [Task2] start simulation
+01:07:31 [Task2] expand active state
+01:08:15 [Task2] look at source code (focus on main)
+01:09:48 [Task2] pause simulation
+01:09:50 [Task2] look at source code (focus on main)
+01:10:47 [Task2] add find 324
+01:10:51 [Task2] add find 328
+01:10:54 [Task2] continue simulation
+01:11:11 [Task2] run simulation
+01:11:14 [Task2] set Entry State
+01:11:20 [Task2] start simulation
+01:11:56 [Task2] look at stdin of state in found
+01:12:20 [Task2] look at stdin of the second state in found
+01:12:40 [Task2] look at source code
+01:12:57 [Task2] cancel find 328
+01:13:33 [Task2] cancel avoid 257
+01:14:29 [Task2] add find 131
+01:15:03 [Task2] run simulation
+01:15:05 [Task2] set Entry State
+01:15:16 [Task2] run simulation
+01:15:30 [Task2] look at stdin of state in found
+01:15:41 [Task2] scroll through source code
+01:15:47 [Task2] add find 256
+01:15:54 [Task2] cancel find 324
+01:16:05 [Task2] cancel find 131
+01:16:09 [Task2] run simulation
+01:16:12 [Task2] set Entry State
+01:16:18 [Task2] start simulation
+01:16:56 [Task2] scroll through source code
+01:19:15 [Task2] pause simulation
+01:19:46 [Task2] run symbolic execution with Task0
+01:22:46 [Task0] sun symbolic execution with Task1
+01:27:45 [Task1] read tutorial of SeDBG
+01:28:54 [Task1] run symbolic execution with practice3
+01:33:18 [Task2] open  source code
+01:33:55 [Task2] load binary
+01:34:10 [Task2] scroll through source code
+01:34:22 [Task2] add avoid 54
+01:34:35 [Task2] add avoid 119
+01:34:41 [Task2] cancel avoid 119
+01:34:48 [Task2] add avoid 125
+01:35:13 [Task2] add avoid 173
+01:35:28 [Task2] add avoid 222
+01:35:33 [Task2] add avoid 227
+01:35:45 [Task2] add avoid 246
+01:36:32 [Task2] run simulation
+01:36:33 [Task2] set Entry State
+01:36:40 [Task2] start simulation
+01:36:53 [Task2] add avoid 330
+01:37:12 [Task2] run simulation
+01:37:17 [Task2] set Entry State
+01:37:22 [Task2] start simulaiton
+01:38:30 [Task2] look at source code
+01:39:00 [Task2] cancel avoid 246
+01:39:05 [Task2] cancel avoid 227
+01:39:05 [Task2] cancel avoid 222
+01:39:14 [Task2] cancel avoid 173
+01:39:20 [Task2] cancel avoid 125
+01:39:26 [Task2] cancel avoid 54
+01:39:34 [Task2] run simulation
+01:39:37 [Task2] set Entry State
+01:39:45 [Task2] start simulation
+01:41:25 [Task2] scroll through source code
+01:41:49 [Task2] add avoid 119
+01:41:54 [Task2] add avoid 125
+01:42:13 [Task2] add avoid 222
+01:42:28 [Task2] add avoid 246
+01:43:02 [Task2] run simulation
+01:43:04 [Task2] set Entry State
+01:43:09 [Task2] start simulation
+01:47:08 [Task2] look at source code
+01:47:34 [Task2] look at stdin of state in Heap_Checker
+01:47:50 [Task2] look at register lis of state in Heap_Checker
+01:48:07 [Task2] save stdin of state in Heap_Checker
+01:48:25 [Task2] try input DCDC
+01:48:36 [Task2] try input DC
+01:48:53 [Task2] look at source code
+01:49:37 [Task2] try input D | C
+01:49:42 [Task2] try input DC
+01:49:46 [Task2] try input DCDC
+01:50:29 [Task2] look at source code
+01:51:18 [Task2] look at stdin of the second state in Heap_Checker
+01:51:23 [Task2] try input DBDB
+01:51:34 [Task2] try input D | DB
+01:51:47 [Task2] look at source code
+01:52:16 [Task2] try input DA
+01:52:21 [Task2] try input DB
+01:52:32 [Task2] try input DC
+01:52:38 [Task2] try input DD
+01:52:44 [Task2] try input DBDB
+01:52:49 [Task2] scroll through source code
+01:55:41 [Task2] fill survey
+01:55:57 [Task2] try input DDDD
+01:56:10 [Task2] try input DADA
+01:56:13 [Task2] try input DADADADADADBDBDCDCDD
+01:56:45 [Task2] fill survey
+02:07:06 [Task2] load binary
+02:07:18 [Task2] scroll through source code
+02:07:27 [Task2] add avoid 119
+02:07:31 [Task2] add avoid 125
+02:07:41 [Task2] fill survey
+02:08:10 [Task2] scroll through source code
+02:08:40 [Task2] add avoid 222
+02:09:05 [Task2] fill survey
+02:09:10 [Task2] add avoid 227
+02:09:16 [Task2] add avoid 246
+02:09:22 [Task2] fill survey
+02:09:30 [Task2] add avoid 257
+02:09:43 [Task2] add avoid 330
+02:09:46 [Task2] fill survey
+02:09:53 [Task2] run simulation
+02:09:56 [Task2] set Entry State
+02:10:01 [Task2] start simulation
+02:10:22 [Task2] fill survey
+02:13:56 [Task2] try input DD
+02:14:02 [Task2] try input DDDCDBDA
+02:19:29 [Task2] pause simulation
+02:21:03 [Task2] scroll through source code
+02:21:24 [Task2] cancel avoid 227
+02:21:40 [Task2] add avoid 227
+02:21:43 [Task2] run simulation
+02:21:45 [Task2] set Entry State
+02:21:50 [Task2] start simulation
+02:26:02 [Task2] load binary
+02:26:18 [Task2] scroll through source code
+02:26:32 [Task2] add avoid 119
+02:26:42 [Task2] add avoid 125
+02:26:58 [Task2] add avoid 173
+02:27:10 [Task2] add avoid 222
+02:27:16 [Task2] add avoid 227
+02:27:22 [Task2] add avoid 246
+02:27:27 [Task2] add avoid 257
+02:27:37 [Task2] add avoid 330
+02:27:57 [Task2] run simulation
+02:28:00 [Task2] set Entry State
+02:28:05 [Task2] start simulation
+02:31:00 [Task2] pause simulation
+02:31:05 [Task2] scroll through source code
+02:31:24 [Task2] cancel avoid 227
+02:31:29 [Task2] run simulation
+02:31:38 [Task2] set Entry State
+02:31:44 [Task2] start simulation
+02:34:04 [Task2] fill survey
+02:39:49 [Task2] scroll through source code
+02:40:08 [Task2] load binary
+02:41:34 [Task2] scroll through source code
+02:42:48 [Task2] add avoid 125
+02:43:09 [Task2] add avoid 222
+02:43:13 [Task2] add avoid 246
+02:43:31 [Task2] add avoid 324
+02:43:33 [Task2] add avoid 330
+02:43:39 [Task2] run simulation
+02:43:48 [Task2] set Entry State
+02:43:53 [Task2] start simulation
+02:45:03 [Task2] look at stdin of each state in Heap_Checker
+02:45:36 [Task2] scroll through source code
+02:46:07 [Task2] look at stdin of each state in Heap_Checker
+02:46:20 [Task2] scroll through source code
+02:47:04 [Task2] pause simulation
+02:47:08 [Task2] cancel avoid 324
+02:47:11 [Task2] add avoid 328
+02:47:18 [Task2] cancel avoid 328
+02:47:20 [Task2] add avoid 327
+02:47:23 [Task2] run simulation
+02:47:26 [Task2] set Entry State
+02:47:28 [Task2] start simulation
+02:48:12 [Task2] scroll through source code
+02:49:29 [Task2] fill survey
+02:52:35 [Task2] exit angr
+02:52:49 [Task2] edit source code
+02:53:15 [Task2] compile
+02:53:46 [Task2] load binary
+02:54:07 [Task2] add avoid 125
+02:54:24 [Task2] add avoid 222
+02:54:27 [Task2] add avoid 246
+02:54:59 [Task2] add avoid 327
+02:55:02 [Task2] add avoid 330
+02:55:05 [Task2] run simulation
+02:55:07 [Task2] set Entry State
+02:55:12 [Task2] start simulation
+03:00:42 [Task2] pause simulation
+03:00:44 [Task2] exit angr
+03:01:02 [Task2] finish survey

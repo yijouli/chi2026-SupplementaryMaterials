@@ -1,0 +1,28 @@
+00:45:30 [Task3] read task description
+00:47:00 [Task3] compile
+00:47:48 [Task3] load binary
+00:48:21 [Task3] read source code
+00:49:34 [Task3] set avoid 222
+00:49:56 [Task3] set avoid 246
+00:50:01 [Task3] set avoid 257
+00:51:03 [Task3] scroll through source code
+00:51:21 [Task3] set avoid 119
+00:51:24 [Task3] set avoid 125
+00:51:36 [Task3] run simulation
+00:51:38 [Task3] set Entry State
+00:51:45 [Task3] start simulation
+00:53:24 [Task3] expand active
+00:54:08 [Task3] scroll through source code
+00:56:27 [Task3] look at stdin of state in Heap_Checker
+00:56:53 [Task3] analyze source code (focus on main)
+00:57:56 [Task3] look at stdout of state in Heap_Checker
+00:58:31 [Task3] look at stderr of state in Heap_Checker
+00:58:46 [Task3] scroll through source code (focus on grub_mini_cmd_rmmod)
+00:59:47 [Task3] look at stdin of states in Heap_Checker
+01:00:02 [Task3] look at stdout of state in Heap_Checker
+01:00:21 [Task3] scroll through source code
+01:02:24 [Task3] look at stderr of state in Heap_Checker
+01:02:35 [Task3] scroll through source code (focus on grub_mini_cmd_lsmod) 
+01:03:04 [Task3] fill survey
+01:06:03 [Task3] scroll through source code (focus on grub_mini_cmd_lsmod)
+01:17:05 [Task3] finish survey

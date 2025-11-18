@@ -1,0 +1,519 @@
+00:55:59 [Task2] read task description
+00:58:16 [Task2] open source code in VScode
+00:58:45 [Task2] compile
+00:59:06 [Task2] read source code
+01:00:41 [Task2] run program
+01:01:06 [Task2] read task description
+01:01:27 [Task2] read source code
+01:01:29 [Task2] try input "D | D A"
+01:01:47 [Task2] try input "D 1"
+01:02:08 [Task2] read source code
+01:02:20 [Task2] try input "I E | a"
+01:02:36 [Task2] try input "I E | 0"
+01:02:40 [Task2] try input "d"
+01:02:55 [Task2] read source code
+01:03:18 [Task2] edit test.py
+from pwn im
+01:03:42 [Task2] pip install pwntools
+01:04:04 [Task2] read survey questions
+01:04:18 [Task2] edit test.py
+from pwn import *
+exe = ELF("./main_sedbg")
+p = exe.process()
+01:05:45 [Task2] edit source code
+add line 315: printf("Do something interestings :D?\n");
+01:05:53 [Task2] compile
+01:06:07 [Task2] edit test.py
+from pwn import *
+exe = ELF("./main_sedbg", checksec=False)
+p = exe.process()
+p.recvuntil("Do something interestings :D?\n")
+def insmod(modname: str, dependencies: list):
+    payload = b"I"
+    payload += modname.encode()
+    for dep in dependencies:
+        payload += dep.encode() + b"\0"
+    payload += b"\0"
+    p.send(payload)
+def rmmod(modname: str):
+    payload = b"D"
+    payload += modname.encode()
+    payload += b"\0"
+    p.send(payload)
+insmod("K",["A,B,C"])
+#rmmod("D")
+p.interactive()
+01:14:22 [Task2] python3 test.py
+01:14:40 [Task2] edit test.py
+from pwn import *
+exe = ELF("./main_sedbg", checksec=False)
+p = exe.process()
+output = p.recvuntil("Do something interestings :D?\n")
+print(output.decode())
+def insmod(modname: str, dependencies: list):
+    payload = b"I"
+    payload += modname.encode()
+    for dep in dependencies:
+        payload += dep.encode() + b"\0"
+    payload += b"\0"
+    p.send(payload)
+    p.interactive()
+def rmmod(modname: str):
+    payload = b"D"
+    payload += modname.encode()
+    payload += b"\0"
+    p.send(payload)
+    p.interactive()
+insmod("K",["A,B,C"])
+#rmmod("D")
+01:15:16 [Task2] python3 test.py
+01:15:25 [Task2] input D
+01:15:44 [Task2] scroll through source code
+01:16:18 [Task2] edit test.py
+from pwn import *
+exe = ELF("./main_sedbg", checksec=False)
+p = exe.process()
+output = p.recvuntil("Do something interestings :D?\n")
+print(output.decode())
+def insmod(modname: str, dependencies: list):
+    payload = b"I"
+    payload += modname.encode()
+    for dep in dependencies:
+        payload += dep.encode() + b"\0"
+    payload += b"\0"
+    print(payload)
+    p.send(payload)
+    p.interactive()
+def rmmod(modname: str):
+    payload = b"D"
+    payload += modname.encode()
+    payload += b"\0"
+    p.send(payload)
+    p.interactive()
+insmod("K",["A,B,C"])
+#rmmod("D")
+01:16:36 [Task2] python3 test.py
+01:16:42 [Task2] input D
+01:16:50 [Task2] edit test.py
+from pwn import *
+exe = ELF("./main_sedbg", checksec=False)
+p = exe.process()
+output = p.recvuntil("Do something interestings :D?\n")
+print(output.decode())
+def insmod(modname: str, dependencies: list):
+    payload = b"I"
+    payload += modname.encode()
+    for dep in dependencies:
+        payload += dep.encode() + b"\0"
+    payload += b"\0"
+    print(payload)
+    p.send(payload)
+    p.interactive()
+def rmmod(modname: str):
+    payload = b"D"
+    payload += modname.encode()
+    payload += b"\0"
+    p.send(payload)
+    p.interactive()
+insmod("K",["A","B","C"])
+#rmmod("D")
+01:17:13 [Task2] python3 test.py
+01:17:14 [Task2] input D
+01:17:20 [Task2] edit test.py
+from pwn import *
+exe = ELF("./main_sedbg", checksec=False)
+p = exe.process()
+output = p.recvuntil("Do something interestings :D?\n")
+print(output.decode())
+def insmod(modname: str, dependencies: list):
+    payload = b"I\n"
+    payload += modname.encode()
+    for dep in dependencies:
+        payload += dep.encode() + b"\0"
+    payload += b"\0"
+    print(payload)
+    p.send(payload)
+    p.interactive()
+def rmmod(modname: str):
+    payload = b"D\n"
+    payload += modname.encode()
+    payload += b"\0"
+    p.send(payload)
+    p.interactive()
+insmod("K",["A","B","C"])
+#rmmod("D")
+01:17:34 [Task2] python3 test.py
+01:17:44 [Task2] input D
+01:17:53 [Task2] try input "I | a"
+01:18:00 [Task2] try input "E"
+01:18:06 [Task2] try input "I | E"
+01:18:14 [Task2] read source code
+01:18:35 [Task2] edit test.py
+from pwn import *
+exe = ELF("./main_sedbg", checksec=False)
+p = exe.process()
+output = p.recvuntil("Do something interestings :D?\n")
+print(output.decode())
+def insmod(modname: str, dependencies: list):
+    p.sendline(b"I")
+    payload = b""
+    payload += modname.encode()
+    for dep in dependencies:
+        payload += dep.encode() + b"\0"
+    payload += b"\0"
+    print(payload)
+    p.send(payload)
+    p.interactive()
+def rmmod(modname: str):
+    p.sendline(b"D")
+    payload = b""
+    payload += b"\0"
+    p.send(payload)
+    p.interactive()
+insmod("K",["A","B","C"])
+#rmmod("D")
+01:20:14 [Task2] python3 test.py
+01:20:34 [Task2] edit test.py
+from pwn import *
+exe = ELF("./main_sedbg", checksec=False)
+p = exe.process()
+output = p.recvuntil("Do something interestings :D?\n")
+print(output.decode())
+def insmod(modname: str, dependencies: list):
+    p.sendline(b"I")
+    payload = b""
+    payload += modname.encode()
+    for dep in dependencies:
+        payload += dep.encode() + b"\0"
+    payload += b"\0"
+    print(payload)
+    p.send(payload)
+def rmmod(modname: str):
+    p.sendline(b"D")
+    payload = b""
+    payload += b"\0"
+    p.send(payload)
+insmod("K",["A","B","C"])
+rmmod("D")
+p.interactive()
+01:21:36 [Task2] python3 test.py
+01:21:48 [Task2] read source code
+01:25:52 [Task2] edit test.py
+from pwn import *
+exe = ELF("./main_sedbg", checksec=False)
+p = exe.process()
+output = p.recvuntil("Do something interestings :D?\n")
+print(output.decode())
+def insmod(modname: str, dependencies: list):
+    p.sendline(b"I")
+    payload = b""
+    payload += modname.encode()
+    for dep in dependencies:
+        payload += dep.encode() + b"\0"
+    payload += b"\0"
+    print(payload)
+    p.send(payload)
+def rmmod(modname: str):
+    p.sendline(b"D")
+    payload = modname.encode()
+    payload += b"\0"
+    p.send(payload)
+#insmod("K",["A","B","C"])
+rmmod("D")
+p.interactive()
+01:26:28 [Task2] python3 test.py
+01:26:48 [Task2] input D
+01:26:50 [Task2] input D
+01:26:55 [Task2] scroll through source code
+01:27:02 [Task2] input DA
+01:27:41 [Task2] edit source code
+edit line 333: printf("No not today :D\n");
+01:28:00 [Task2] compile
+01:28:00 [Task2] python3 test.py
+01:28:08 [Task2] input D
+01:28:11 [Task2] input DA
+01:28:14 [Task2] input DA
+01:28:14 [Task2] input DA
+01:28:16 [Task2] input DA
+01:28:22 [Task2] input DD
+01:28:24 [Task2] input DC
+01:28:26 [Task2] input DB
+01:28:36 [Task2] fill survey
+01:29:30 [Task2] scroll through source code
+01:30:33 [Task2] try input DA | DA | DA | DA | DA | DB | DB | DC | DC
+01:31:02 [Task2] try input DD | DD | DC | DB | DA 
+01:31:46 [Task2] load binary
+01:32:05 [Task2] scroll through source code
+01:32:24 [Task2] add avoid 324
+01:32:58 [Task2] add avoid 333
+01:33:14 [Task2] run simulation
+01:33:15 [Task2] set Entry State
+01:33:24 [Task2] start simulation
+01:33:51 [Task2] look at stdin of avoid state
+01:33:56 [Task2] scroll through source code
+01:34:11 [Task2] leave vm
+01:36:14 [Task2] back to vm
+01:36:43 [Task2] scroll through source code
+01:36:49 [Task2] edit source code
+add line 334: continue;
+01:37:00 [Task2] compile
+01:37:06 [Task2] try input DA | DA
+01:37:19 [Task2] edit source code
+delete line 334
+01:37:26 [Task2] compile
+01:37:54 [Task2] try input DA | DA | DA | DA | DD | DB
+01:38:38 [Task2] fill survey
+01:38:51 [Task2] try input DA | DA | DA | DA | DA | DB | DC | DC | DD | DD
+01:39:21 [Task2] try input DA | DA | DA | DA | DA | DB | DC | DD | IA | I | A
+01:39:54 [Task2] try input DA | DA | DA | DA | DB | DA | DA | DB | DD | DC
+01:40:21 [Task2] try input IA | IA | DA | DA | DA | DA | DA | DC | DC | DD | DD | DB | DA
+01:40:52 [Task2] scroll through source code
+01:41:34 [Task2] focus on grub_mini_cmd_rmmod
+01:43:48 [Task2] run simulation
+01:43:50 [Task2] set Entry State
+01:43:54 [Task2] start simulation
+01:44:30 [Task2] try input A | DA | DA | DA | DA | DA | DB | DD | DC
+01:45:23 [Task2] fill survey
+01:45:38 [Task2] look at stdin of avoid state
+01:46:17 [Task2] scroll through source code
+01:47:03 [Task2] try input DA | DA | DA | DA | DA | DD | DC | DB
+01:47:28 [Task2] try input DA | DA | DA | DC | DB | DA | DD
+01:48:02 [Task2] try input DA | DA | DA | DA | DD | DA | DV | DB
+01:48:34 [Task2] try input DA | DA | DB | DC | DB | DC | DC | DD
+01:49:07 [Task2] scroll through source code
+01:52:12 [Task2] try input DA | DA | DA | DA | DA | DB | DC | DD
+01:52:22 [Task2] scroll through source code
+01:52:52 [Task2] focus on grub_dl_unload
+01:53:36 [Task2] try input DB | DC | DD | DA | DA
+01:54:09 [Task2] try input DA | DA | DA | Da | DA | DA | DC | DB | DD
+01:54:21 [Task2] scroll through source code
+01:55:02 [Task2] fill survey
+01:58:14 [Task2] try input DA | DA | Da | DA | DA | DC | DB | DD
+01:58:34 [Task2] try input DA | DC | DB | DD
+01:58:46 [Task2] try input DD | DD | DC | DA | DA
+01:59:12 [Task2] fill survey
+02:01:22 [Task2] try input DC | DA | DB | DB | DD
+02:01:45 [Task2] try input DC | DA | DC | DB
+| DB02:02:18 [Task2] fill survey
+02:03:22 [Task2] scroll through source code
+02:03:24 [Task2] add avoid 273
+02:04:31 [Task2] edit source code
+comment line 334, 311
+02:04:46 [Task2] compile
+02:04:51 [Task2] try input DA | DA | DC | DB | DB
+02:05:02 [Task2] edit source code
+cancel comment line 334
+02:05:17 [Task2] compile
+02:05:19 [Task2] try input DA | DC | DA | DB
+02:05:35 [Task2] edit source code
+comment line 334
+02:05:47 [Task2] fill survey
+02:07:20 [Task2] try input DA | DC | DA | DB
+02:07:33 [Task2] try input DA | DA | DA | DC | DB
+02:07:44 [Task2] try input DA | DA | DC | DB
+02:07:55 [Task2] try input DA | DC | DA | DB
+02:08:08 [Task2] try input DA | DA | DC | DB
+02:08:17 [Task2] try input DA | DC | DB
+02:08:26 [Task2] try input DC | DA | DB | DB
+02:08:38 [Task2] try input DA | DB | DC
+02:08:46 [Task2] try input DA | DA | DC | DB
+02:08:55 [Task2] try input DA | DB | DA | DC
+02:09:10 [Task2] try input DC | DA | DA | DB
+02:09:28 [Task2] try input DA | DB | DA | DC
+02:10:08 [Task2] try input DA | DC | DA | DB
+02:10:27 [Task2] try input DA | DB | DA | DC
+02:10:43 [Task2] try input DA | da | DA | DC | DB
+02:10:56 [Task2] try input DA | DB | DC | DA
+02:11:06 [Task2] try input DA | DC | DB | DA
+02:11:15 [Task2] try input DA | DA | DC | DB
+02:11:29 [Task2] try input DA | DC | DC | DB | DA
+02:11:43 [Task2] try input DA | DC | DA | DB | DB
+02:11:56 [Task2] try input DC | DA | DA | DB
+02:12:32 [Task2] fill survey
+02:13:19 [Task2] scroll through source code
+02:14:47 [Task2] load binary
+02:14:56 [Task2] scroll through source code
+02:15:10 [Task2] add avoid 333
+02:15:14 [Task2] add avoid 327
+02:15:16 [Task2] cancel avoid 327
+02:15:21 [Task2] add avoid 324
+02:15:30 [Task2] add avoid 273
+02:15:35 [Task2] add avoid 241
+02:15:44 [Task2] run simulation
+02:15:47 [Task2] set Entry State
+02:15:54 [Task2] start simulation
+02:16:16 [Task2] fill survey
+02:16:30 [Task2] scroll through source code
+02:17:39 [Task2] edit test.py
+from pwn import *
+exe = ELF("./main_sedbg", checksec=False)
+p = exe.process()
+output = p.recvuntil("Do something interestings :D?\n")
+print(output.decode())
+def insmod(modname: str, dependencies: list):
+    p.sendline(b"I")
+    payload = b""
+    payload += modname.encode()
+    for dep in dependencies:
+        payload += dep.encode() + b"\0"
+    payload += b"\0"
+    print(payload)
+    p.send(payload)
+def rmmod(modname: str):
+    p.sendline(b"D")
+    payload = modname.encode()
+    payload += b"\0"
+    p.send(payload)
+#insmod("K",["A","B","C"])
+p.interactive()
+02:17:55 [Task2] python3 test.py
+02:17:58 [Task2] input DC
+02:18:01 [Task2] input DA
+02:18:05 [Task2] input DA
+02:18:05 [Task2] input DB
+02:18:26 [Task2] scroll through source code
+02:19:39 [Task2] fill survey
+02:22:15 [Task2] scroll through source code
+02:22:36 [Task2] read tutorial
+02:23:43 [Task2] start simulation
+02:23:46 [Task2] set Entry State
+02:23:54 [Task2] read tutorial
+02:24:38 [Task2] scroll through source code
+02:24:51 [Task2] add find 181
+02:25:03 [Task2] add find 185, 184
+02:25:12 [Task2] run simulation
+02:25:26 [Task2] scroll through source code
+02:25:34 [Task2] cancel avoid 273
+02:25:48 [Task2] start simulation
+02:25:48 [Task2] set Entry State
+02:25:51 [Task2] run simulation
+02:26:30 [Task2] scroll through  source code
+02:26:38 [Task2] edit source code
+comment line 313
+02:26:52 [Task2] compile
+02:27:10 [Task2] load binary
+02:27:28 [Task2] add find 181
+02:27:32 [Task2] add find 184, 185
+02:27:42 [Task2] add avoid 324
+02:27:46 [Task2] add find 329
+02:27:54 [Task2] run simulation
+02:28:00 [Task2] set Entry State
+02:28:03 [Task2] start simulation
+02:28:32 [Task2] look at fd of avoid state
+02:29:02 [Task2] edit source code
+comment line 315
+02:29:05 [Task2] compile
+02:29:48 [Task2] load binary
+02:29:58 [Task2] add find 329
+02:30:03 [Task2] add avoid 324
+02:30:10 [Task2] add avoid 333
+02:30:19 [Task2] run simulation
+02:30:22 [Task2] set Entry State
+02:30:26 [Task2] start simulation
+02:30:44 [Task2] look at stdin of avoid state
+02:30:50 [Task2] cancel find 329
+02:30:58 [Task2] add find 330
+02:31:05 [Task2] start simulation
+02:31:09 [Task2] run simulation
+02:31:24 [Task2] look at stdin of avoid state
+02:31:27 [Task2] cancel avoid 324
+02:31:34 [Task2] add avoid 325
+02:31:37 [Task2] run simulation
+02:31:44 [Task2] scroll through source code
+02:32:05 [Task2] start simulation
+02:32:16 [Task2] look at stdin of found state
+02:32:56 [Task2] read tutorial
+02:33:25 [Task2] explore found state
+02:34:10 [Task2] read tutorial
+02:34:38 [Task2] look at stdin of avoid states
+02:35:33 [Task2] cancel find 330
+02:35:35 [Task2] add find 331
+02:35:41 [Task2] cancel avoid 325
+02:35:45 [Task2] add avoid 325
+02:35:56 [Task2] run simulation
+02:36:07 [Task2] set Entry State
+02:36:13 [Task2] start simulation
+02:36:36 [Task2] look at stdin and stdout of found state
+02:36:49 [Task2] read tutorial
+02:38:03 [Task2] run simulation
+02:38:06 [Task2] set Entry State
+02:38:27 [Task2] read tutorial
+02:39:18 [Task2] load binary
+02:39:32 [Task2] add avoid 325
+02:39:36 [Task2] add avoid 333
+02:39:43 [Task2] add find 181
+02:39:45 [Task2] add find 184
+02:39:47 [Task2] add find 185
+02:39:52 [Task2] start simulation
+02:39:58 [Task2] set Entry State
+02:40:02 [Task2] run simulation
+02:40:23 [Task2] look at stdin of found state
+02:40:25 [Task2] explore found state
+02:40:29 [Task2] look at stdin of found states
+02:40:40 [Task2] explore found state
+02:40:45 [Task2] look at stdin of found states
+02:40:50 [Task2] explore found state
+02:40:54 [Task2] look at stdin of found states
+02:41:00 [Task2] explore found state
+02:41:03 [Task2] look at stdin of found states
+02:41:07 [Task2] explore found state
+02:41:15 [Task2] look at stdin of found states
+02:41:23 [Task2] explore found state
+02:41:24 [Task2] look at stdin of found states
+02:41:33 [Task2] explore found state
+02:41:37 [Task2] look at stdin of found states
+02:41:42 [Task2] explore found state
+02:41:46 [Task2] look at stdin of found states
+02:41:54 [Task2] explore found state
+02:41:57 [Task2] look at stdin of found states
+02:41:59 [Task2] explore found state
+02:42:04 [Task2] look at stdin of found states
+02:42:06 [Task2] explore found state
+02:42:09 [Task2] look at stdin of found states
+02:42:16 [Task2] explore found state
+02:42:22 [Task2] look at stdin of found states
+02:42:36 [Task2] explore found state
+02:42:42 [Task2] look at stdin of found states
+02:42:50 [Task2] explore found state
+02:42:56 [Task2] cut state
+02:43:00 [Task2] delete two states in found
+02:43:20 [Task2] fill survey
+02:45:19 [Task2] load binary
+02:45:33 [Task2] add avoid 333
+02:45:36 [Task2] add avoid 325
+02:45:44 [Task2] add find 181
+02:45:50 [Task2] run simulation
+02:45:53 [Task2] set Entry State
+02:45:55 [Task2] start simulation
+02:46:31 [Task2] look at stdin of found state
+02:46:32 [Task2] explore found state
+02:46:35 [Task2] look at stdin of found states
+02:46:38 [Task2] explore found state
+02:46:43 [Task2] look at stdin of found states
+02:46:43 [Task2] delete the last found state
+02:46:47 [Task2] explore found state
+02:46:50 [Task2] look at stdin of found states
+02:46:52 [Task2] delete the last state in found
+02:46:55 [Task2] explore found state
+02:46:58 [Task2] look at stdin of found states
+02:47:00 [Task2] explore found state
+02:47:05 [Task2] delete the last state in found
+02:47:09 [Task2] explore found state
+02:47:14 [Task2] delete the last three states in found
+02:47:24 [Task2] explore found state 
+02:47:30 [Task2] delete the last two state in found
+02:47:36 [Task2] explore found state
+02:47:45 [Task2] look at stdin of found states
+02:47:46 [Task2] explore found state
+02:47:50 [Task2] look at stdin of found states
+02:47:56 [Task2] delete the last state in found
+02:48:03 [Task2] explore found state
+02:48:06 [Task2] look at stdin of found states
+02:48:08 [Task2] explore found state
+02:48:11 [Task2] look at stdin of found states
+02:48:14 [Task2] explore found state
+02:48:21 [Task2] look at stdin of found states
+02:48:36 [Task2] explore found state
+02:48:52 [Task2] look at stdin of Heap_Checker states
+02:49:00 [Task2] look at stderr of Heap_Checker state
+02:49:08 [Task2] finish survey

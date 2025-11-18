@@ -1,0 +1,66 @@
+00:34:41 [Task3] Read Task Description
+00:36:07 [Task3] cd && GCC
+00:37:37 [Task3] open angr-doc
+00:39:47 [Task3] RTD
+00:40:22 [Task3] RSC [main]
+00:40:49 [Task3] open Ghidra
+00:41:27 [Task3] creaate chidra project && load ELF
+00:41:54 [Task3] load ELF into disasm
+00:42:08 [Task3] read source code in Ghidra decompile [rmmod]
+00:42:48 [Task3] read angr-doc [Loading a Binary]
+00:43:07 [Task3] import angr in ipython
+00:43:40 [Task3] ip> proj = angr.Project("./main_angr")
+00:44:11 [Task3] RSC
+00:48:46 [Task3] ip> init_state
+00:49:01 [Task3] ip> simgr
+00:50:03 [Task3] RSC
+00:53:17 [Task3] ip> init_state with STRICT_PAGE_ACEESS option
+00:53:25 [Task3] ip> simgr
+00:54:13 [Task3] ip> find_symbol("cmd_insmod")
+00:56:45 [Task3] ip> find_symbol("cmd_insmod"). linked_addr / rebased_addr
+00:57:29 [Task3] avoids.append(rebased_addr)
+00:59:31 [Task3] Ghira find address 0x001879
+00:59:53 [Task3] avoids.append 0x401879
+01:02:07 [Task3] avoids.append 0x4015AF
+01:02:31 [Task3] ip>simgr.run(avoids=avoids)
+01:03:02 [Task3] keyboard Interrupt
+01:03:12 [Task3] >simgr.deadended
+01:03:34 [Task3] simgr.deadended[0].posix.dumps(0)
+01:03:56 [Task3] RSC in Ghidra [main]
+01:04:31 [Task3] hex(avoids[1])
+01:04:45 [Task3] >simgr.avoid [AttributeError] x3
+01:05:11 [Task3] >simgr.active
+01:05:15 [Task3] simgr.active[-1].posix.dumps(0)
+01:05:48 [Task3] look up address Ghidra
+01:06:55 [Task3] [x.posix.dumps(0) for x in simgr.active]
+01:07:20 [Task3] look up address Ghidra
+01:07:37 [Task3] avoid.append(0x401812)
+01:07:52 [Task3] >?simgr.run
+01:08:41 [Task3] RSC "cmd_rmmod"
+01:09:39 [Task3] >simgr
+01:10:01 [Task3] >?simgr.step
+01:11:17 [Task3] >simgr.step() x2 + simgr.active
+01:11:46 [Task3] RSC in Ghidra
+01:11:53 [Task3] simgr.step() x5 + simgr.active
+01:12:11 [Task3] simgr.step() + simgr.active
+01:12:45 [Task3] simgr.step() + simgr.active
+01:12:51 [Task3] simgr.run(avoid=tuple(avoids))
+01:14:09 [Task3] RSC
+01:14:20 [Task3] simgr>deadended
+01:14:30 [Task3] >[x.posix.dumps(0) for x in simgr.deadended]
+01:14:50 [Task3] >[x.posix.dumps(0) for x in simgr.active]
+01:15:38 [Task3] >simgr reset
+01:15:48 [Task3] simgr.explore(avoid=tuple(avoids))  [all states go avoid]
+01:16:07 [Task3] >simgr reset
+01:16:11 [Task3] >display avoids list
+01:16:19 [Task3] hex(avoid[0])
+01:16:27 [Task3] avoids = avoids[1:] remove the first elem
+01:16:33 [Task3] simgr.explore(avoid=tuple(avoids)) 
+01:17:28 [Task3] keyboard Interrupt
+01:17:37 [Task3] [x.posix.dumps(0) for x in simgr.active]
+01:18:27 [Task3] simgr.explore(avoid=tuple(avoids))  [contune]
+01:19:00 [Task3] run elf with DADADADADA | DADADADADCDC | DBDBDBDBD .... [no crush, but unexpended output is shown]
+01:22:11 [Task3] GCC with asan
+01:22:20 [Task3] try DADADADADA [crash]
+01:23:06 [Task3] RSC
+01:23:48 [Task3] fill survey

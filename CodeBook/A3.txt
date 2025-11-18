@@ -1,0 +1,95 @@
+01:00:34 [Task3] read task description
+01:01:48 [Task3] install pwndbg
+01:04:19 [Task3] compile
+01:04:22 [Task3] try input D | C
+01:04:44 [Task3] read source code
+01:11:33 [Task3] read task description
+01:11:42 [Task3] inactive
+01:28:31 [Task3] active
+01:28:35 [Task3] read task description
+01:30:48 [Task3] read source code
+01:31:37 [Task3] read task description
+01:32:51 [Task3] read angr document
+01:33:34 [Task3] inactive
+01:36:38 [Task3] active
+01:36:42 [Task3] read task description
+01:36:59 [Task3] read source code
+01:38:33 [Task3] inactive
+01:40:40 [Task3] active
+01:40:52 [Task3] vim sol.py
+01:42:14 [Task3] inactive
+01:53:48 [Task3] active
+01:54:37 [Task3] open source code in VScode
+01:54:48 [Task3] copy source code
+01:54:56 [Task3] inactive
+01:58:33 [Task3] active
+01:59:37 [Task3] edit sol.py
+import angr
+binary_path = "main"
+project = angr.Project(binary_path)
+entry_state = project.factory.entry_state()
+simulation_manager = project.factory.simgr(entry_state)
+simulation_manager.run(until=lambda lpg: len(lpg.active)>300)
+for state in simulation_manager.deadended:
+    print(state)
+02:00:34 [Task3] install angr
+02:01:50 [Task3] python3 sol.py
+02:03:05 [Task3] open source code in terminal
+02:04:03 [Task3] look at deadended state
+02:04:12 [Task3] inactive
+02:04:54 [Task3] active
+02:04:58 [Task3] edit sol.py
+02:05:04 [Task3] inactive
+02:06:21 [Task3] active
+02:06:28 [Task3] edit sol.py
+import angr
+binary_path = "main"
+project = angr.Project(binary_path)
+entry _state = project.factory.entry_state()
+entry_state.posix.get_fd(0).read_from(100)
+entry_state.posix.get_fd(0).seek(0)
+simulation_manager = project.factory.simgr(entry_state)
+simulation_manager.run(until=lambda lpg: len(lpg.active)>300)
+for state in simulation_manager.deadended:
+    print("=== State ===")
+    print("stdin:\n", state.posix.dumps(0))
+    print("stdout:\n", state.posix.dumps(1))
+    print("stderr:\n", state.posix.dumps(2))
+02:07:12 [Task3] python3 -i sol.py
+02:08:40 [Task3] vim sol.py
+import angr
+binary_path = "main"
+project = angr.Project(binary_path)
+stdin_file = angr.storage.file.SimFile("/dev/stdin","r",content=claripy.BVS("stdin",8*100))
+entry _state = project.factory.entry_state(stdin=stdin_file)
+simulation_manager = project.factory.simgr(entry_state)
+simulation_manager.explore()
+for state in simulation_manager.deadended:
+    print("=== State ===")
+    print("stdin:\n", state.posix.dumps(0))
+    print("stdout:\n", state.posix.dumps(1))
+    print("stderr:\n", state.posix.dumps(2))
+02:09:21 [Task3] python3 sol.py
+02:09:40 [Task3] inactive
+02:14:06 [Task3] active
+02:14:18 [Task3] vim sol.py
+import angr
+import claripy
+binary_path = "main"
+project = angr.Project(binary_path)
+content=claripy.BVS("stdin",8*100))
+entry _state = project.factory.entry_state(stdin=content)
+simulation_manager = project.factory.simgr(entry_state)
+simulation_manager.explore()
+for state in simulation_manager.deadended:
+    print("=== State ===")
+    print("stdin:\n", state.posix.dumps(0))
+    print("stdout:\n", state.posix.dumps(1))
+    print("stderr:\n", state.posix.dumps(2))
+02:14:40 [Task3] python3 sol.py
+02:16:17 [Task3] scroll through source code
+02:19:06 [Task3] inactive
+02:21:56 [Task3] active
+02:21:57 [Task3] fill survey
+02:23:08 [Task3] stop simulation
+02:23:28 [Task3] finish survey
