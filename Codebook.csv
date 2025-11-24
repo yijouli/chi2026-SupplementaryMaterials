@@ -1,0 +1,24 @@
+,,,
+,Code,Description for API,Description for GUI
+,Compile program,"Compile the program using the commands we provide, or with any additional compile flags as needed.","Compile the program using the commands we provide, or with any additional compile flags as needed."
+,Comprehend program,Read the source code or disassembly code.,Read the source code or disassembly code.
+,Draft Angr script,"Have an initial script, either by typing it by hand or by copying and pasting it from a tutorial or other sources.",-
+,Debug Angr script,Modify the Angr script and run it iteratively.,-
+,Set up initial state,-,"Call out the initial state list, modify the state template, name the simulation, or set up the start address."
+,Stop simulation,Interrupt the simulation through keyboard interaction.,Click the pause/stop simulation button.
+,Continue simulation,-,Click the continue simulation button or explore a state in the Simulation Manager stashes.
+,Start simulation,Execute the participant's Angr script.,Click the start simulation button.
+,Decide path prioritization,Add the find/avoid addresses to the Angr script.,Add the find/avoid paths.
+,Observe simulation progress,Look at or scroll through the output of the Angr script.,"Scroll through the Simulation Manager, expand the active/deadended/find/avoid stashes, or click a state to get further information during the simulation."
+,Observe simulation result,Look at or scroll through the output of the Angr script after the simulation has stopped or been interrupted by keyboard interaction.,"Scroll through the Simulation Manager, expand the active/deadended/find/avoid stashes, or click a state to get further information after the simulation stop/be paused."
+,Analyze source code,"Scroll through the source code, read a specific function, or jump back and forth between the source code and its disassembly.","Scroll through the source code, read a specific function, or jump back and forth between the source code and its disassembly."
+,Wait for simulation,Wait on the terminal page after executing the Angr script.,Wait in the symbolic execution page after clicking the start button.
+,Adjust path prioritization,Add new find/avoid paths or remove existing ones in the Angr script.,Add new find/avoid paths or remove existing ones.
+,Try input,"Run the program with some random inputs, or with inputs obtained from the symbolic state.","Run the program with some random inputs, or with inputs obtained from the symbolic state."
+,Observe program output,Look at or scroll through the program’s output.,Look at or scroll through the program’s output.
+,Read tutorial or task description,Read the tutorial or task description.,Read the tutorial or task description.
+,Search online resources,Open a website and search for something.,Open a website and search for something.
+,Move around states,-,Copy or cut a state from one stash to another.
+,Save input,-,Save the input by clicking the save button in state's stdin.
+,Edit source code,Modify the source code as needed.,Modify the source code as needed.
+,Set non-prioritization constraints,Edit the Angr script without modifying path prioritization or path selection.,-
