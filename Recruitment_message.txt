@@ -1,0 +1,2 @@
+We are conducting study on a new Symbolic Debugger designed for bug identification in C/C++ programs and looking for participates with experience in C/C++. Register for our online self-pace 2 hrs experiment and earn $50 amazon gift card.
+(The pre-survey link has been removed for anonymization purposes.)
