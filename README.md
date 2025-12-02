@@ -11,5 +11,5 @@ This repo contains the supplementary materials for SESight project.
 * Full Task Description: This file includes the full task description for both API users and GUI users.
 * Pre-survey: This file contains the pre-survey we used to filter the participants, from which the informed consent statement, experiment explanation, and contact questions have been excluded (from the original version).
 * Pre-screening_task: This is the code for the pre-screening task. Participants were asked to find the vulnerability and describe it in the pre-survey.
-* Post Survey: This file includes the SUS survey that participants were asked to complete after they finished the task, regardless of whether they found the vulnerability or not.
+* Post Survey: This file includes three parts of the questionnaire, the vulnerability finding report, the SUS, and the SE tool feedback questions. Participants were asked to complete the entire survey regardless of whether they successfully found the vulnerability.
 * Recruitment_message: This file includes the recruitment message we sent.
