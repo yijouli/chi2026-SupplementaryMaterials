@@ -1,5 +1,5 @@
 # Overview
-This repo contains the supplementary materials for SESight project.
+This repo contains the supplementary materials for for the paper "I Can SE Clearly Now: Investigating the Effectiveness of GUI-based Symbolic Execution for Software Vulnerability Discovery."
 
 # Content
 * CodeBook: This file includes the qualitative codes for participants’ behavior.
